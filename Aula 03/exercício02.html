@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 5px;
+            padding: 0;
+        }
+        body {
+            width: 70%;
+            margin: auto;
+
+        }
+        #semPontos{
+            list-style: square;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Tabela de IRRF</h1>
+    <p>Conhecendo a base real do imposto, pode-se identificar a faixa de percentual em que o funcionário se encaixa. As
+        faixas atualizadas são:</p>
+
+    <ul id="semPontos">
+        <li>até R$1.903,98: isenção;</li>
+        <li>1ª faixa: 7,5% para bases de R$ 1.903,99 a R$ 2.826,65;</li>
+        <li>2ª faixa: 15% para bases de R$ 2.826,66 a R$ 3.751,05;</li>
+        <li>3ª faixa: 22,5% para bases de R$ 3.751,06 a R$ 4.664,68;</li>
+        <li>4ª faixa: 27,5% para bases a partir de R$ 4.664,69.
+        </li>
+    </ul>
+
+    <h1>Alíquota da base de cálculo IRRF</h1>
+    <p>Após verificado o imposto de acordo com a alíquota da sua base de cálculo, é deduzido um valor padrão, o que
+        permite obter o valor final do imposto. Cada faixa de tributação tem uma dedução definida, da seguinte forma:
+    </p>
+    <ul>
+        <li>1ª faixa: R$ 142,80;</li>
+        <li>2ª faixa: R$ 354,80;</li>
+        <li>3ª faixa: R$ 636,13;</li>
+        <li>4ª faixa: R$ 869,36.</li>
+    </ul>
+
+    <p>Mostramos abaixo a contabilização do imposto no caso do nosso exemplo:</p>
+
+    <ul>
+        <li>R$ 2.250,41 x 7,5% = R$ 168,78;</li>
+        <li>R$ 168,78 – R$ 142,80 = R$ 25,98 de IR a ser retido na fonte.</li>
+    </ul>
+
+
+    <hr>
+    <hr>
+
+    <div>
+        <p>Digite o valor do seu salário: <input type="number" id="salario" value="0"></p>
+        <button onclick="calcular()">Calcule</button>
+    </div>
+
+    <div>O valor de desconto é igual a: <span id="resultado"></span>
+    </div>
+
+    <script>
+        function calcular() {
+            var resposta = Number(document.getElementById('salario').value)
+            var desconto;
+
+            if (resposta <= 1903.98) {
+                document.getElementById('resultado').innerText = "0"
+            } else if (resposta <= 2826.65) {
+                desconto = (resposta * 0.075) - 142.8
+                document.getElementById('resultado').innerText = `R$${desconto.toFixed(2)}`
+
+            } else if (resposta <= 3751.05) {
+                desconto = (resposta * 0.15) - 354.8
+                document.getElementById('resultado').innerText = `R$${desconto.toFixed(2)}`
+
+            } else if (resposta <= 4664.68) {
+                desconto = (resposta * 0.225) - 636.13
+                document.getElementById('resultado').innerText = `R$${desconto.toFixed(2)}`
+
+            } else {
+                desconto = (resposta * 0.275) - 869.36
+                document.getElementById('resultado').innerText = `R$${desconto.toFixed(2)}`
+            }
+        }
+    </script>
+</body>
+
+</html>

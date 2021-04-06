@@ -1,0 +1,16 @@
+Exercicios:
+
+Obs: Criar um novo projeto para trabalhar com os exercicios.
+Esse projeto deve ter o javaScript separado do Html, se possível utilizar css em algum lugar por conta própria.
+
+
+1) - Crie um sistema que receba os dados de uma pessoa como (nome, idade e sexo)
+e em seguida crie uma cópia fiel desta pessoa.
+Escreva da forma que achar melhor na tela as propriedades de cada objeto.
+
+
+2) - Crie um sistema que receba uma pessoa e salve todas as alterações que tiveram na pessoa. (nome, idade e sexo)
+Essa pessoa pode ser alterada até 5 vezes pelo usuário. O usuário pode alterar qualquer informação sobre a pessoa.
+
+
+3) - Crie um sistema que explique ao usuário final de forma intuitiva, clara e com suas palavras a diferença entre escopos (Globais, locais, blocos), let, const, var e referências.

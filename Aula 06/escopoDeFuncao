@@ -1,0 +1,2 @@
+o escopo de função é area de atuação de determinada variável (var, let, outras) dentro da função. 
+Ou seja, é o espaço no código delimitado pela funçao, onde determinada variável pode ser acessada.

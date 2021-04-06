@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For</title>
+</head>
+<body>
+    <script>
+        var quantidade = Number(prompt("Digite a quantidade de vezes que deseja calcula a Sequência Fibonacci"))
+
+        var primeiro = 1
+        var segundo = 1
+        var terceiro = 1
+
+        for(var cont = 0; cont < quantidade; cont++){
+            document.write(primeiro + "<br>")
+            primeiro = segundo + terceiro;
+            segundo = terceiro
+            terceiro = primeiro
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <p id="pessoas"></p>
+    <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank">Organização alfabetica</a></p>
+
+    <script>
+
+        /*
+       Criar um array da nossa turma com as informações de 5 alunos.
+       Informações que precisamos:
+       idade, nome completo,
+       email, se ta gostando do curso e as
+       prefenrencias. (Minimo de 3)
+
+       1° Caike
+       2° Roberta
+       3° Claudia
+       4° Gabriel Aragão
+       5° Daniela.
+
+       */
+
+        var turma = [
+            {
+                nome: "Daniela Falk",
+                idade: 23,
+                email: "danifalk27@gmail.com",
+                preferencias: [
+                    "musica", "jogos", "tortas"
+                ],
+                gostandoDoCurso: "ah e to gostando sim"
+            },
+            {
+                nome: "Roberta Bastos Jesus",
+                idade: 23,
+                email: "ooitens@gmail.com",
+                preferencias: [
+                    "games", "chocolate", "cachorros", "livros"
+                ],
+                gostandoDoCurso: "Estou Amando o curso"
+            },
+            {
+                nome: "Gabriel Aragão",
+                idade: 24,
+                email: "gp96.aragao@gmail.com",
+                preferencias: [
+                    "Cafés", "Músicas internacionais", "jogos"
+                ],
+                gostandoDoCurso: "Maravilhado com o curso"
+            },
+            {
+                nome: "Claudia Maia de Andrade de Almeida Gripp",
+                idade: 34,
+                email: "maiaandradec@gmail.com",
+                preferencias: [
+                    "cachorros", "comer", "netflix"
+                ],
+                gostandoDoCurso: "gostando muito"
+            },
+            {
+                nome: "Caike Augusto Martins Lima",
+                idade: 19,
+                email: "caikemartins28@gmail.com",
+                preferencias: [
+                    "jogar bola", "sair", "dirigir"
+                ],
+                gostandoDoCurso: "Estou gostando do curso"
+            }
+        ]
+        turma.sort(function (a, b){
+            if(a.nome < b.nome){
+                return -1
+            }
+        })
+        for (var aluno of turma) {
+            var preferencia = "";
+            for (var p of aluno.preferencias){
+                preferencia += p + ", ";
+            }
+            document.write("Nome: " + aluno.nome + "<br>")
+            document.write("Idade: " + aluno.idade + "<br>")
+            document.write("E-mail: " + aluno.email + "<br>")
+            document.write("preferencias: " + preferencia + "<br>")
+            document.write("Gostando do curso? Resposta: " + "<strong>" + aluno.gostandoDoCurso + "</strong>" + "<br><br>")
+        }
+    </script>
+</body>
+
+</html>

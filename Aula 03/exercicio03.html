@@ -1,0 +1,61 @@
+<!D OCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <style>
+        body {
+            width: 90%;
+            margin: auto;
+        }
+        div {
+            width: 400px;
+            padding: 10px 0px 10px 40px;
+        }
+        #resultado {
+            text-align: center;
+            font-size: 2em;
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculo de IMC</h1>
+    <div>
+        <p>Por favor, digite seu peso <input type="number" id="peso"></p>
+        <p>Por favor, digite sua altura <input type="number" id="altura"></p>
+        <button onclick="calcular()">Calcular IMC</button>
+    </div>
+
+    <p id="resultado">?</p>
+
+    <script>
+
+        function calcular(){
+            var peso = Number(document.getElementById('peso').value)
+            var altura = Number(document.getElementById('altura').value)
+            var resultado = peso / (altura * altura)
+
+            if(resultado < 18.5){
+                document.getElementById('resultado').innerHTML = `Seu IMC é: ${parseInt(resultado)} <br> você está abaixo do peso.`
+            } else if(resultado < 24.9){
+                document.getElementById('resultado').innerHTML = `Seu IMC é: ${parseInt(resultado)} <br> você está com o peso normal.`
+            } else if(resultado < 29.9){
+                document.getElementById('resultado').innerHTML = `Seu IMC é: ${parseInt(resultado)} <br> você está com sobrepreso.`
+            } else if(resultado < 34.9){
+                document.getElementById('resultado').innerHTML = `Seu IMC é: ${parseInt(resultado)} <br> você está com obesidade Grau I.`
+            }else if(resultado < 39.9){
+                document.getElementById('resultado').innerHTML = `Seu IMC é: ${parseInt(resultado)} <br> você está com obesidade Grau II.`
+            }else {
+                document.getElementById('resultado').innerHTML = `Seu IMC é: ${parseInt(resultado)} <br> você está com obesidade Grau III ou mórbida.`
+            } 
+        }
+
+    </script>
+</body>
+
+</html>

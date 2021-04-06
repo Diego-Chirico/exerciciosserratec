@@ -1,0 +1,2 @@
+Quando se trata de escopo de variável estamos nos referindo a qual local de nosso código uma determinada variável pode ser acessada. 
+Uma variável global é definida quando declaramos uma variável fora de qualquer função, assim ela torna acessível a qualquer parte da nossa aplicação, podendo ser lida e alterada.

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While</title>
+</head>
+
+<body>
+    <script>
+
+        var quantidade = prompt("Digite a quantidade de vezes que deseja calcula a sequência fibonacci")
+        var contador = 0
+        var primeiro = 1
+        var segundo = 1
+        var terceiro = 1
+
+        while (isNaN(quantidade) || quantidade < 1) {
+            if (isNaN(quantidade)) {
+                alert(`Você digitou: ${quantidade}, por favor, digite apenas números`)
+                quantidade = prompt("Digite a quantidade de vezes que deseja calcula a sequência fibonacci")
+            } else {
+                alert(`Você digitou: ${quantidade}, por favor, digite um número igual ou maior que "1"`)
+                quantidade = prompt("Digite a quantidade de vezes que deseja calcula a sequência fibonacci")
+            }
+        }
+
+        while (contador < quantidade) {
+            document.write(`A quantidade de vezes calculado é: ${(contador + 1)}, o valor de fibonacci é: ${primeiro}  <br>`)
+            primeiro = segundo + terceiro;
+            terceiro = segundo;
+            segundo = primeiro;
+            contador ++;
+        }
+    </script>
+</body>
+
+</html>
